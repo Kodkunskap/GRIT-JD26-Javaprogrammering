@@ -47,25 +47,25 @@ public class Lesson02 {
             -> Banken - ett exempel med if-satser och input/output <-
         */
 
-        final int userPinCode = 1234;
+        final int userPinCode = 1234;   // Detta är pinkoden - den är final så att den inte ändras av misstag
         double amount = 1000;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Välkommen till Gritgotts bank!");
         System.out.print("Var vänlig mata in din pinkod: ");
         int enteredPinCode = scanner.nextInt();
-        if (enteredPinCode == userPinCode) {
+        if (enteredPinCode == userPinCode) {    // Kontrollera om användaren angav rätt pin
             System.out.println("Välkommen!");
         } else {
             System.out.println("Tyvärr, du angav fel pin!");
-            System.exit(-1);
+            System.exit(-1);              // Avsluta programmet
         }
 
         System.out.printf("Ditt saldo är %.2f kronor\n", amount);
         System.out.print("Hur mycket vill du ta ut? ");
         double requestedWithdrawal = scanner.nextDouble();
-        if (requestedWithdrawal <= amount) {
-            amount -= requestedWithdrawal;
+        if (requestedWithdrawal <= amount) {    // Kontrollera att det finns pengar på kontot
+            amount -= requestedWithdrawal;      // Minska beloppet i amount
         } else {
             System.out.println("Du har inte tillräckligt med deg!");
         }
