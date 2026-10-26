@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Lesson02 {
 
     public static void main(String[] args) {
@@ -9,6 +11,9 @@ public class Lesson02 {
             Block-kommentar - över flera rader
 
          */
+
+        int number = (int) Math.pow(2, 2);
+        System.out.println(number);
 
         // Primitiva datatyper
         int myCounter = 1;
@@ -32,11 +37,39 @@ public class Lesson02 {
         Double myLong = (double) timerInMS;
 
         String userInput = "67";
-        int pinCode = Integer.parseInt(userInput);      // Convertering från strång till int
+        int pinCode = Integer.parseInt(userInput);      // Konvertering från sträng till int
         System.out.println("User pincode: " + pinCode);
 
         age++;      // age = age + 1
         age += 10;  // age = age + 10
+
+        /*
+            -> Banken - ett exempel med if-satser och input/output <-
+        */
+
+        final int userPinCode = 1234;
+        double amount = 1000;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Välkommen till Gritgotts bank!");
+        System.out.print("Var vänlig mata in din pinkod: ");
+        int enteredPinCode = scanner.nextInt();
+        if (enteredPinCode == userPinCode) {
+            System.out.println("Välkommen!");
+        } else {
+            System.out.println("Tyvärr, du angav fel pin!");
+            System.exit(-1);
+        }
+
+        System.out.printf("Ditt saldo är %.2f kronor\n", amount);
+        System.out.print("Hur mycket vill du ta ut? ");
+        double requestedWithdrawal = scanner.nextDouble();
+        if (requestedWithdrawal <= amount) {
+            amount -= requestedWithdrawal;
+        } else {
+            System.out.println("Du har inte tillräckligt med deg!");
+        }
+        System.out.printf("Ditt saldo är %.2f kronor\n", amount);
 
     }
 
