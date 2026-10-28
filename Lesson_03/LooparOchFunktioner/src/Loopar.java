@@ -1,3 +1,6 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class Loopar {
 
     public static void main() {
@@ -7,7 +10,6 @@ public class Loopar {
                 for - loop
 
          */
-
 
         /*
 
@@ -73,6 +75,52 @@ public class Loopar {
 
          */
 
+
+        int maxTal = max(5, 1);
+        System.out.println("Det största talet av 5 och 1 är: " + maxTal);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Vad är vårt start tal? ");
+        int startNumber = scanner.nextInt();
+        System.out.print("Vad är vårt slut tal? ");
+        int endNumber = scanner.nextInt();
+        countAndPrintSum(startNumber, endNumber);       // anropa vår egen funktion
+
+        /*
+
+            Exempel på hur man kan slumpa tal mellan 1 och 9 (bound = 10 är inte med i intervallet)
+
+            Random random = new Random();
+            int slumpatHeltal = random.nextInt(1, 10);
+            double slumpatFlyttal = random.nextDouble(10.0);
+        */
+    }
+
+    public static int max(int tal1, int tal2) {
+
+        if (tal1 > tal2) {
+            return tal1;
+        }
+
+        return tal2;
+    }
+
+    public static void countAndPrintSum(int start, int end) {
+
+        int sum = 0;
+
+        for (
+                int counter = start;
+                counter <= end;
+                counter++
+        ) {
+            sum += counter;
+        }
+
+        System.out.printf(
+                "Summan av talen mellan %d och %d blir %d\n",
+                start, end, sum
+        );
     }
 
 }
