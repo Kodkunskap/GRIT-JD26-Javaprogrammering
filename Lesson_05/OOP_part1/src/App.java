@@ -31,6 +31,23 @@ public class App {
         volvo.accelerate(75);
         volvo.brake(50);
         System.out.println("Volvo is now driving in " + volvo.currentSpeed + "km/h");
+
+        /**
+         *      User - example
+         */
+        User pelle = new User("Pelle");
+        User anna = new User("Anna");
+        System.out.println(pelle.toString());
+        System.out.println(anna.toString());
+
+
+        anna.follow(pelle);
+        System.out.println(pelle.toString());
+        System.out.println(anna.toString());
+
+        System.out.println("Pelle är mer populär än Anna: " + pelle.isPopularThan(anna));
+        System.out.println("Anna är mer poplulär än Pelle: " + anna.isPopularThan(pelle));
+
     }
 
 }
